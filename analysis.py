@@ -44,7 +44,7 @@ app.layout = html.Div([
                     figure=pieChartByTokenId(initial_nft), 
                 ),
                 html.Div([
-                    html.H5("The records of a NFT"), 
+                    html.H5("The records of a NFT", style={"text-align": "center"}), 
                     dbc.Table.from_dataframe(initial_nft_df, striped=True, bordered=True, hover=True), 
                 ], id="NFT_table"
                 , style={
@@ -79,7 +79,7 @@ def update_ana_NFT(NFT_tokenID):
         "address": [i["address"] for i in data_records]
     })
 
-    return pie_chart, [dbc.Table.from_dataframe(table_df, striped=True, bordered=True, hover=True)]
+    return pie_chart, [html.H5("The records of a NFT",  style={"text-align": "center"}), dbc.Table.from_dataframe(table_df, striped=True, bordered=True, hover=True)]
 
 
 if __name__ == '__main__':
